@@ -43,7 +43,7 @@ function handleOver(e) {
 function handleDrop(e) {
     e.preventDefault();
     console.log("Dropped");
-
+    // Crashing Bug: debugging to prevent multiple pieces from being dropped in the same place. If this drop zone already has a piece, additional pieces cannot be dropped here.
     if (this.children.length > 0) {
         console.log("Drop zone took placed");
         return;
@@ -73,5 +73,6 @@ dropZones.forEach(zone => zone.addEventListener("dragover", handleOver));
 
 dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
 
+// Crashing Bug: added an event listener to the reset button so that when clicked, everything returns to its original state.
 resetButton.addEventListener("click", reset);
 resetButton.addEventListener('click', resetPieces);
