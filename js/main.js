@@ -19,31 +19,29 @@ console.log(puzzleBoard);
 
 //changing background images and puzzle pieces
 function changeBGImage(event) {
-    console.log('changeBGImage called');
-   
-    //Change the puzzle pieces using `forEach` loop, and make sure they are placed back to original positions.
-    const pos = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'];
-  
-    puzzlePieces.forEach((piece, index) => {
-      piece.src = `images/${pos[index]}${event.currentTarget.id}.jpg`;
-      puzzlePieceDiv.appendChild(piece);
-    });
+  console.log("changeBGimage called");
+  console.log(event.currentTarget.id);
+  puzzleBoard.style.backgroundImage = `url('./images/backGround${event.currentTarget.id}.jpg')`;
+  const puzzleId = event.currentTarget.id;
 
-    resetPieces();
-  
-    //Method 2
-    console.log(event.currentTarget.id);
-    puzzleBoard.style.backgroundImage = `url('../images/backGround${event.currentTarget.id}.jpg')`;
-  }
+  // Update puzzle pieces to match the new background
+  const pieceNames = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'];
+  puzzlePieces.forEach((piece, index) => {
+      piece.src = `./images/${pieceNames[index]}${puzzleId}.jpg`;
+  });
+
+  resetPieces();
+}
+
   
   //start of dragging a puzzle piece
   function handlestartDrag() {
-    console.log('started dragging');
+    console.log(`start dragging ${this}`);
     dragPiece = this;
   }
   
   function handleOver(e) {
-    console.log('dragged over to dropZone');
+    console.log('drag over to dropZone');
     e.preventDefault();
   }
   
@@ -53,6 +51,7 @@ function changeBGImage(event) {
       console.log('Drop zone took placed');
       return;
     }
+    
     this.appendChild(dragPiece);
   }
   
