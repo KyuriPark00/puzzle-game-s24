@@ -16,5 +16,13 @@ function changeBGImage(event) {
     console.log(event.currentTarget.id);
 }
 
+// 드롭 존에 이미지 있을 시 반환.
+function dropped() {
+    if (this.children.length >= 1) {
+        return;
+      }
+      this.appendChild(dragPiece);
+}
+
 //eventListeners
 theButtons.forEach(button => button.addEventListener("click",changeBGImage));
