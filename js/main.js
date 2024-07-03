@@ -13,7 +13,7 @@ let dragPiece;
 function changeBGImage(event) {
     console.log('changeBGImage called');
    
-    // Method 2 of changing puzzle using foreach loop and put back puzzle
+    // Change the puzzle pieces using `forEach`, loop, and make sure they are placed back to original positions.
     const pos = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'];
   
     puzzlePieces.forEach((piece, index) => {
@@ -37,14 +37,18 @@ function changeBGImage(event) {
   }
   
   function dropped() {
-    // Method 1 check is there any image before the first puzzle drop
-    // if (this.children.length < 1) {
-    // this.appendChild(dragPiece);
-    //}
-  
-    //Method 2 check is there any image after the first puzzle drop
-
+    
+    if (this.children.length >= 1) {
+      return;
+    }
+    this.appendChild(dragPiece);
+  }
   
 
 //eventListeners
-theButtons.forEach(button => button.addEventListener('click',changeBGImage));
+theButtons.forEach((button) => button.addEventListener('click', changeBGImage));
+puzzlePieces.forEach((piece) =>
+  piece.addEventListener('dragstart', handlestartDrag)
+);
+dropZones.forEach((zone) => zone.addEventListener('dragover', handleOver));
+dropZones.forEach((zone) => zone.addEventListener('drop', dropped));
