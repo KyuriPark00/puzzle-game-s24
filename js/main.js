@@ -13,7 +13,7 @@ let dragPiece;
 function changeBGImage(event) {
     console.log('changeBGImage called');
    
-    // Change the puzzle pieces using `forEach`, loop, and make sure they are placed back to original positions.
+    // Change the puzzle pieces using `forEach` loop, and make sure they are placed back to original positions.
     const pos = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'];
   
     puzzlePieces.forEach((piece, index) => {
