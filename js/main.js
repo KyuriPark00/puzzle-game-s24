@@ -11,8 +11,6 @@ const resetButton = document.getElementById("resetBut");
 let draggedPiece;
 let currentPuzzle = 0;
 
-console.log(theButtons);
-console.log(puzzleBoard);
 
 // Functions
 function changeBGImage(event) {

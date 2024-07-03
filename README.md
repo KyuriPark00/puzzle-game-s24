@@ -7,6 +7,13 @@ No installation required. Simply donwload the files
 ## Usage
 Please open the index.html file in desired browser.
 
+## Features
+* Drag-and-Drop Interface: Users can drag puzzle pieces and drop them into specified zones.
+
+* Background Change: Change the puzzle background by clicking on the thumbnails.
+
+* Puzzle Reset: Reset the puzzle pieces to their original positions when changing the puzzle background.
+
 ## Contributing
 
 1. Fork it!
