@@ -43,11 +43,7 @@ function changeBGImage(event) {
     //}
   
     //Method 2 check is there any image after the first puzzle drop
-    if (this.children.length >= 1) {
-      return;
-    }
-    this.appendChild(dragPiece);
-  }
+
   
 
 //eventListeners
